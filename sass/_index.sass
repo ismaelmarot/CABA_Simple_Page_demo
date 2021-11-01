@@ -1,0 +1,98 @@
+@use '_variables' as var    
+@use '_mixins' as mix
+
+/*============= STYLES ============================*/
+h1 , h2 , h3 , p , a
+    font-family: var.$font-1
+    text-decoration: none  
+    color: nth(var.$colors,7) 
+
+.body
+    @include mix.flex-direction(column,center,center)
+    border: .1rem solid nth(var.$colors,1)
+    margin: .1rem
+
+    .slider-container
+        width: 90%
+        max-width: 60rem
+        overflow: hidden
+        position: relative
+
+        .slider-btn
+            position: absolute
+            @include mix.setHeightWidth(3rem,3rem)
+            @include mix.flex-direction(column,center,center)
+            background: nth(var.$colors,8)
+            top: 50%
+            transform: translateY(-50%)
+            font: bold monospace center
+            border-radius: 50%
+            cursor: pointer
+
+            &:hover
+                background: nth(var.$colors,7)
+
+        .btn-left
+            left: 1rem
+        .btn-right
+            right: 1rem
+
+        .slider
+            display: flex
+            @include mix.setHeightWidth(30rem,400%)
+            margin-left: -100%
+
+            .slider-section
+                width: 100%
+                position: relative
+
+                .slider-info
+                    @include mix.flex-direction(column,space-between,flex-start)
+                    @include mix.setHeightWidth(100%,100%)            
+                    position: absolute
+                    font-family: var.$font-2
+                    
+                    .slider-info-place
+                        margin: 1rem 3rem
+                        
+                        .slider-title
+                            font-size: 3rem
+                            
+                            a
+                                &:hover
+                                    color: nth(var.$colors,9)    
+
+                        .slider-subtitle
+                            margin-top: .5rem
+                            font-size: 1.5rem
+
+                    .slider-info-links
+                        @include mix.flex-direction(row,space-around,center)
+                        width: 100%
+                        
+                        a
+                            width:  6rem
+                            color: nth(var.$colors,6)
+                            
+                            &:hover
+                                p
+                                    color: nth(var.$colors,9)
+                                
+                            p
+                                margin-bottom: .5rem
+                .slider-img 
+                    display: block
+                    @include mix.setHeightWidth(100%,100%)
+                    object-fit: cover                 
+
+/*===== MEDIA QUERIES =============================*/  
+/*----- [MAX-WIDHT-767]-START ----------------------*/
+@media (max-width: 767px)   
+    .body
+        .destinations-box-1 , .destinations-box-2
+            @include mix.flex-direction(column,center,center)
+
+        .form
+            ul li
+                input , textarea
+                    width: 15rem

@@ -1,0 +1,259 @@
+/*===== GRID LAYOUT =======================*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  display: -ms-grid;
+  -ms-grid-columns: 1fr [8];
+}
+
+.header, .body, .footer {
+  grid-column: 1/9;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+}
+
+/*============== COLORS ==============================*/
+/*============== FONTS ==============================*/
+/*============== LISTS ==============================*/       
+/*========= MIXINS =====================*/
+/*============= STYLES ============================*/
+h1, h2, p, a {
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+.grid-container {
+  height: 100vh;
+  background: #170dc9;
+  background: linear-gradient(29deg, #170dc9 0%, #5e5ee6 24%, #00d4ff 100%);
+}
+
+.header, .body, .footer {
+  border: 0.1rem solid black;
+  margin: 0.1rem;
+}
+
+.header {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  justify-content: flex-end;
+  -webkit-box-pack: flex-end;
+  -ms-flex-pack: flex-end;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  position: sticky;
+  top: 0;
+  background-color: black;
+}
+.header .navBar {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  margin-right: 1rem;
+}
+.header .navBar h2 {
+  font-size: 1.5rem;
+  font-color: white;
+}
+.header .navBar h2 a {
+  color: white;
+  margin: 1rem;
+  padding: 1rem;
+}
+.header .navBar h2:hover a {
+  background-color: #222f3e;
+}
+.header .navBarIcon {
+  margin-right: 1rem;
+  font-size: 2rem;
+  display: none;
+}
+
+.body {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+}
+.body .destinations-box {
+  width: 100%;
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  border: 1px solid black;
+}
+.body .destinations-box .destinations {
+  height: 5rem;
+  width: 3rem;
+  background-color: red;
+  margin: 1rem;
+  border: 1px solid black;
+}
+.body .destinations-box .destinations:hover {
+  border: 0.1rem solid pink;
+}
+
+.form {
+  height: auto;
+  width: auto;
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  border: 1px solid pink;
+  border-radius: 5px;
+  margin: 3rem;
+}
+.form ul li {
+  border: 1px solid pink;
+  margin: 1rem 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+}
+.form ul li label {
+  margin: 0.5rem 0.5rem 0 0.5rem;
+}
+.form ul li input, .form ul li textarea {
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.footer {
+  background-color: black;
+}
+.footer .footer-web-info {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  height: 100%;
+}
+.footer .footer-web-info .info-dev-text {
+  margin: 0.5rem 1rem;
+  color: white;
+}
+
+/*===== MEDIA QUERIES =============================*/
+/*----- [MIN-WIDHT-1024]-START ----------------------*/
+@media (max-width: 1023px) {
+  .header {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+  }
+}
+/*----- [MAX-WIDHT-1023-MIN-WIDHT-768]-START --------*/  
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+  }
+  .header .navBar {
+    display: none;
+    border: 1px solid white;
+    width: 100%;
+  }
+  .header .navBar h2 {
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+    width: 100%;
+    padding: 1rem 0 0.22rem;
+  }
+  .header .navBarIcon {
+    display: block;
+    color: white;
+  }
+}
+/*----- [MAX-WIDHT-767]-START ----------------------*/
+@media (max-width: 767px) {
+  .body .destinations-box-1, .body .destinations-box-2 {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+  }
+
+  .footer .footer-web-info {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+  }
+  .footer .footer-web-info .info-dev-text {
+    margin: 0.5rem;
+  }
+}
+
+/*# sourceMappingURL=styes.css.map */

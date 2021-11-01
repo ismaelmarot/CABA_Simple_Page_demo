@@ -1,0 +1,23 @@
+@use '_variables' as var    
+@use '_mixins' as mix 
+
+/*============= STYLES ============================*/
+.emergent-window
+    @include mix.flex-direction(column,center,center)
+    @include mix.setHeightWidth(100vh,100vw)
+    background-color: nth(var.$colors,3)
+    position: absolute
+    z-index: 3
+    transition: 3s
+
+    p        
+        font-size: 2rem
+        margin: .2rem
+    
+    button
+        margin-top: 3rem
+        background-color: nth(var.$colors,1)
+        color: nth(var.$colors,7)
+        padding: 1rem 2rem
+        border: none
+        border-radius: 3px 

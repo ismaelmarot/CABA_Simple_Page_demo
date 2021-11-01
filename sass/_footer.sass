@@ -1,0 +1,24 @@
+@use '_variables' as var    
+@use '_mixins' as mix
+
+/*============= STYLES ============================*/
+.footer    
+    border: .1rem solid nth(var.$colors,1)
+    margin: .1rem
+    background-color: nth(var.$colors,1)
+
+    .footer-web-info
+        @include mix.flex-direction(row,center,center)
+
+        .info-dev-text
+            margin: .5rem
+            color: white
+
+/*----- [MAX-WIDHT-767]-START ----------------------*/
+@media (max-width: 767px)
+    .footer 
+        .footer-web-info
+            @include mix.flex-direction(column,center,center)  
+
+            .info-dev-text
+                margin: .5rem

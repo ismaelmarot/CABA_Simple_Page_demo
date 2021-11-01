@@ -1,0 +1,57 @@
+@use '_variables' as var    
+@use '_mixins' as mix   
+
+/*============= STYLES ============================*/
+.header
+    @include mix.flex-direction(row,flex-end,center)  
+    position: sticky   
+    top: 0   
+    border: .1rem solid nth(var.$colors,1)
+    margin: .1rem
+    background-color: nth(var.$colors,1)
+    
+    .navBar
+        @include mix.flex-direction(row,center,center)
+        margin-right: 1rem
+    
+        h2
+            font-size: var.$font-size-h2
+            padding: 1rem 0       
+    
+            a
+                padding: .9rem
+    
+            &:hover            
+                a
+                    background-color: nth(var.$colors,2)
+                    transition: .5s
+    
+    .navBarIcon
+        margin-right: 1rem
+        font-size: 2rem
+        display: none
+
+/*===== MEDIA QUERIES =============================*/
+/*----- [MIN-WIDHT-1024]-START ----------------------*/
+@media (max-width: 1023px)
+    .header
+        @include mix.flex-direction(row,center,center)
+
+/*----- [MAX-WIDHT-1023-MIN-WIDHT-768]-START --------*/  
+@media (max-width: 768px)
+    .header 
+        @include mix.flex-direction(column,center,flex-end)
+        .navBar
+            display: none//block
+            border: 1px solid white
+            width: 100%
+            h2
+                display: flex
+                justify-content: center
+                border: 1px solid white
+                width: 100%
+                padding: 1rem 0 .22rem
+                         
+        .navBarIcon
+            display: block
+            color: white

@@ -1,0 +1,41 @@
+@use '_variables' as var    
+@use '_mixins' as mix
+
+/*============= STYLES ============================*/
+.body-contact
+    background: linear-gradient(rgba(5,12,7,.75),rgba(5,12,7,.75))
+    background-image: url(../img/img-contact.jpg)
+    background-position: center center
+    background-size: cover
+
+.form
+        @include mix.setHeightWidth(auto,auto)
+        @include mix.flex-direction(column,center,center)
+        border: 1px solid pink
+        border-radius: 5px
+        margin: 3rem
+        background-color: nth(var.$colors,2)
+        background: linear-gradient(rgba(5,12,7,.45),rgba(5,12,7,.45))
+    
+        h3
+            margin-top: 1rem
+        
+        h3 , p
+            color: nth(var.$colors,7)
+
+        ul li
+            border: 1px solid pink
+            margin: 1rem .5rem
+            border-radius: 5px
+            @include mix.flex-direction(column,center,center)
+                
+            label
+                margin: .5rem .5rem 0 .5rem
+
+            input , textarea
+                margin: .5rem
+                width: 25rem 
+
+        .btn-send
+            width: 100%
+            color: nth(var.$colors,1)

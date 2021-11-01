@@ -1,0 +1,67 @@
+@use '_variables' as var
+@use '_mixins' as mix
+
+/*============= STYLES ============================*/
+
+.body-places
+    @include mix.flex-direction(column,center,center)
+    border: .1rem solid nth(var.$colors,1)
+    margin: .1rem
+
+    .place
+        @include mix.flex-direction(column,center,center)
+        width: 100%
+        margin-bottom: .25rem
+        background-color: nth(var.$colors,10)
+        border: 2px solid var.$color-3
+        border-radius: 3px
+        
+        h3 , p , a
+            font-family: var.$font-1
+            margin: 1rem
+            color: var.$color-2
+
+        h3
+            font-size: var.$font-size-h2
+        a
+            color: var.$color-4
+
+        .place-name
+            @include mix.flex-direction(column,center,center)            
+            width: 100%
+
+        .place-info-and-map  
+            width: 100%
+            @include mix.flex-direction(row,center,center)
+
+            .place-info 
+                width: 70%
+                padding: 1rem
+                text-align: justify
+                text-indent: .5rem
+
+            .place-map 
+                @include mix.flex-direction(column,center,center)
+                height: 100%
+                width: 30%
+                border-radius: 3px 0 0 3px
+                background-color: nth(var.$colors,2)
+                    
+                .country-flag , .iframe
+                    width: 80%
+                    
+/*===== MEDIA QUERIES =============================*/
+/*----- [MIN-WIDHT-1024]-START ----------------------*/
+/*----- [MAX-WIDHT-1023]-START --------*/
+@media (max-width: 1022px)
+    .body-places .place .place-info-and-map
+                @include mix.flex-direction(column,center,center)
+
+                .place-info , .place-map
+                    width: 100%
+
+                    .country-flag , .iframe
+                        width: 50%  
+                    
+                    .country-flag
+                        padding-top: 1rem
